@@ -1,6 +1,4 @@
-spring:
-  application:
-    name: AuthService
+
 
   datasource:
     url: jdbc:mysql://localhost:3306/bluepal_ecomm?allowPublicKeyRetrieval=true&useSSL=false
@@ -17,8 +15,7 @@ spring:
       client:
         url: http://localhost:1111/
 
-  config:
-    import: optional:configserver:http://localhost:2222/
+  
 
 server:
   port: 8081
