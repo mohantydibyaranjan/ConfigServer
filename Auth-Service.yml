@@ -1,14 +1,30 @@
 spring:
   application:
     name: AuthService
+
   datasource:
     url: jdbc:mysql://localhost:3306/bluepal_ecomm?allowPublicKeyRetrieval=true&useSSL=false
     username: root
     password: root
+
   jpa:
     hibernate:
       ddl-auto: update
     show-sql: true
+
+  boot:
+    admin:
+      client:
+        url: http://localhost:1111/
+
+  config:
+    import: optional:configserver:http://localhost:2222/
+
 server:
   port: 8081
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
